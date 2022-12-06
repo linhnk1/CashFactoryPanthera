@@ -1,4 +1,4 @@
-# CashFactory
+# CashFactoryPantheraPanthera
 Lightweight docker image stack (using docker-compose) running many passive income applications (proxy and bandwidth share) : Honeygain , EarnApp , IPRoyal Pawns , PacketStream , Peer2Profit . 
 Expected raw revenue is around $30-$40 per month (Jan 2022 estimation), 24/7 power cost to deduce.
 
@@ -7,14 +7,14 @@ Those tools are using your computer to route traffic, I'm personnally using it r
 Installation (you can open www/index.html file to have a more interactive install section) :
 
 - Install linux OS on your host machine (a low consuming and cheap linux compatible box if you want a dedicated computer) or you can use an already set linux server running 24/7 as this software is very low ressources consuming. 
-- Download CashFactory latest release in $HOME directory : cd $HOME, then : wget https://github.com/linhnk1/CashFactoryPanthera/archive/refs/tags/v1.0.tar.gz , then uncompress : tar -xvf v1.0.tar.gz
-- Edit created directory name to CashFactory and cd inside : mv CashFactory-1.2 CashFactory ; cd CashFactory
+- Download CashFactoryPanthera latest release in $HOME directory : cd $HOME, then : wget https://github.com/linhnk1/CashFactoryPanthera/archive/refs/tags/v1.0.2.tar.gz , then uncompress : tar -xvf v1.0.2.tar.gz
+- Edit created directory name to CashFactoryPanthera and cd inside : mv CashFactoryPanthera-1.0.2 CashFactoryPanthera ; cd CashFactoryPanthera
 - Run install script (Need to run it as sudo -supervisor-) : sudo ./setup.sh
 - Create an account for the app(s) you want to use (8 app supported : see Registering section below)
 - Update .env file with the account details (put your account informations in defined environment variables)
 - (Optional) If you don't want to use all app : comment or delete the corresponding section in docker-compose.yml
-- Special procedure for Earnapp : you will need to add your device in the dashboard, to get the id use Portainer to open "exec console" on the Earnapp container (or through ssh enter: docker exec -it cashfactory_Earnapp_1 sh) and type : earnapp showid, to add the device you need to enter this link in your browser https://earnapp.com/r/your-id replacing "your-id" with the id you found earlier with show-id.
-- Special procedure for Bitping : you will need to enter manually credential to initialize (TODO : easiest way ?), in $HOME/CashFactory type : sudo docker run -it -v $HOME/CashFactory/data/bitping/:/root/.bitping bitping/bitping-node:latest , then enter your credential , once this is done CTL-C to end container
+- Special procedure for Earnapp : you will need to add your device in the dashboard, to get the id use Portainer to open "exec console" on the Earnapp container (or through ssh enter: docker exec -it CashFactoryPanthera_Earnapp_1 sh) and type : earnapp showid, to add the device you need to enter this link in your browser https://earnapp.com/r/your-id replacing "your-id" with the id you found earlier with show-id.
+- Special procedure for Bitping : you will need to enter manually credential to initialize (TODO : easiest way ?), in $HOME/CashFactoryPanthera type : sudo docker run -it -v $HOME/CashFactoryPanthera/data/bitping/:/root/.bitping bitping/bitping-node:latest , then enter your credential , once this is done CTL-C to end container
 
 Registering section and supported cash earning apps :
 
@@ -31,13 +31,13 @@ This won't cost you anything and motivate me to maintain this software by adding
 - Supported [Register Repocket](https://link.repocket.co/qtCj)
 - Supported [Register Bitping](https://app.bitping.com?r=XLr65_of) : This tool only pay in crypto (BitcoinSV)
 - Not yet supported [Register Proxyrack](https://peer.proxyrack.com/ref/08e43xzp6ixdutkxgwsf1vytiqbpcinvt2fge2lc) : Windows only.
-- Not yet supported [Register Spider Income](https://income.spider.dev/r/galan21l65) : linux version under dev (prerequisite for CashFactory implementation). Warning : I get no income on this one since a few monthes, never payed, suspected SCAM
+- Not yet supported [Register Spider Income](https://income.spider.dev/r/galan21l65) : linux version under dev (prerequisite for CashFactoryPanthera implementation). Warning : I get no income on this one since a few monthes, never payed, suspected SCAM
 
 
 Start/stop procedure :
 
-- Start stack : sudo docker-compose up -d (in CashFactory directory)
-- Stop stack : sudo docker-compose down (in CashFactory directory)
+- Start stack : sudo docker-compose up -d (in CashFactoryPanthera directory)
+- Stop stack : sudo docker-compose down (in CashFactoryPanthera directory)
 
 Day to day management :
 
@@ -51,7 +51,7 @@ License :
 
 Compatibility :
 
-- Currently tested and running on a NUC computer with Ubuntu 20.04 server / docker 20.10.12 / docker-compose 1.25.0 ; hardware is N3150 celeron processor (4% load average), 8Gb memory (450 Mb used) and 120Gb disk (10 Gb used) 
+- Currently tested and running on a NUC computer with Ubuntu 20.04 server / docker 20.10.12 / docker-compose 1.0.25.0 ; hardware is N3150 celeron processor (4% load average), 8Gb memory (450 Mb used) and 120Gb disk (10 Gb used) 
 - Should be working on any x86/amd64 computer running Linux+docker with a very basic setup (low end CPU / 1Gb memory / 20Gb disk / 10Mb ethernet adapter)   
 - Other architecture not yet confirmed to be working (Windows / Mac)
 - Confirmed working on ubuntu 20.04 server, 22.04 server 
@@ -68,7 +68,7 @@ TODO list :
 Contact :
 
 - bugs/requests : this github page (section : Issue or Discussion)
-- email : galand.olivier.david@gmail.com
+- email : khaclinh.tk42@gmail.com
  
 Web interface with quick links to dashboards on port 80 (uhttpd server) and Web interface on port 9000 (Portainer container) below :
 
